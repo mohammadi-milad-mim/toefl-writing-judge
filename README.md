@@ -2,7 +2,8 @@
 
 A small command-line tool that sends each candidate response to three independent
 LLM evaluators concurrently. Each evaluator uses the relevant ETS-aligned rubric,
-returns a Markdown 0–5 assessment, and produces a realistic top-band refinement.
+returns a Markdown 0–5 assessment, and produces both a minimal-edit 5/5 revision and
+an enhanced 5/5 revision.
 
 ## Setup
 
@@ -127,6 +128,11 @@ The complete intended Markdown report format is included at the end of each eval
 prompt. The model response is written directly into its `.md` report; the script then
 appends token usage and estimated cost. There is no JSON parsing, Pydantic validation,
 `response_format`, or structured-output retry.
+
+Each assessment includes two complete 5/5 rewrites. The first uses the smallest edits
+that can credibly fix every score-limiting problem while preserving the original wording
+and structure. The second allows broader improvements to development and expression,
+but must remain recognizably based on the candidate’s position and useful ideas.
 
 Each individual LLM request has a hard timeout controlled by `LLM_TIMEOUT_SECONDS` in
 `.env`. The included value is `240`, or four minutes. A timed-out request writes an

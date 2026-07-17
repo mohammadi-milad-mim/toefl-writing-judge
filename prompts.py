@@ -11,7 +11,8 @@ Evaluate the response using the official ETS Write an Email scoring rubric.
 Provide concise, evidence-based reasoning for each evaluation category.
 Assign one holistic task score from 0 to 5.
 Explain the most important changes needed to reach the highest score.
-Produce a refined top-band version based on the candidate’s response.
+Produce two revised versions targeting 5/5 quality: one using the lightest effective
+edits and one allowing broader improvements while preserving the candidate’s ideas.
 INPUT
 Task prompt:
 {{task_prompt}}
@@ -90,16 +91,31 @@ Do not require a fixed word count or a specific email template.
 Do not lower the score merely because you disagree with the candidate’s ideas.
 Base every criticism on observable evidence from the candidate’s response.
 Do not reveal private chain-of-thought reasoning. Provide concise scoring justification.
-REFINEMENT RULES
-Produce a revised answer targeting a 5/5 task score.
-The revised response must:
-preserve the candidate’s main intended message whenever it is relevant;
-address all prompt requirements;
-improve clarity, development, organization, politeness, grammar, and vocabulary;
+REVISION RULES
+Produce two complete revised answers.
+
+Revision 1 — Minimal-Edit 5/5 Version
+Target a 5/5 task score using the lightest edits that can credibly achieve that quality.
+Preserve the candidate’s wording, sentence order, organization, position, and supporting
+ideas wherever possible. Correct all score-limiting problems in task fulfillment,
+clarity, development, politeness, grammar, vocabulary, and mechanics. Do not
+intentionally leave an error or weakness merely to keep the revision slight. Rephrase,
+reorder, remove, or add material only where necessary for 5/5 quality. If slight edits
+alone cannot credibly achieve 5/5, make the smallest additional changes required while
+keeping the response as close to the original as possible.
+
+Revision 2 — Enhanced 5/5 Version
+Produce a very strong 5/5 version with greater freedom to improve development,
+organization, clarity, politeness, grammar, and vocabulary. It may make more changes
+than Revision 1, but it must not become a completely different response. Preserve the
+candidate’s main intended message, position, and useful supporting ideas, and address
+all prompt requirements.
+
+Both revised responses must:
 remain realistic for the seven-minute TOEFL task;
 avoid adding unsupported personal facts;
 avoid unnecessarily advanced or unnatural vocabulary;
-not mention scores, evaluation, or the revision process.
+not mention scores, evaluation, or the revision process within the revised response.
 
 OUTPUT FORMAT
 Return only Markdown. Do not return JSON, XML, YAML, a code fence, or commentary
@@ -271,13 +287,29 @@ For every explicit requirement, use this format:
 - **Score:** [One integer from 0 to 5.]
 - **Performance level:** `nonresponse`, `unsuccessful`, `mostly_unsuccessful`, `partially_successful`, `generally_successful`, or `fully_successful`
 
-## Top-Band Refinement
+## Revised Responses
 
-### Revision Strategy
+### Minimal-Edit 5/5 Revision
 
-- [Briefly state an important change applied in the revision.]
+- **Target score:** 5
 
-### Refined Response
+#### Revision Strategy
+
+- [Briefly state the smallest changes needed to reach 5/5 while preserving the original response as closely as possible.]
+
+#### Revised Response
+
+[Write the complete minimal-edit 5/5 version here. Preserve as much original wording and structure as possible, but correct every score-limiting problem.]
+
+### Enhanced 5/5 Revision
+
+- **Target score:** 5
+
+#### Revision Strategy
+
+- [Briefly state the broader improvements made while keeping the response recognizably based on the candidate’s work.]
+
+#### Revised Response
 
 [Write the complete, realistic 5/5 email here while preserving the candidate’s relevant intent and ideas.]
 """.strip()
@@ -295,7 +327,8 @@ Evaluate the response using the official ETS Write for an Academic Discussion ru
 Provide concise, evidence-based reasoning for each evaluation category.
 Assign one holistic task score from 0 to 5.
 Explain the most important changes needed to reach the highest score.
-Produce a refined top-band version based on the candidate’s response.
+Produce two revised versions targeting 5/5 quality: one using the lightest effective
+edits and one allowing broader improvements while preserving the candidate’s ideas.
 INPUT
 Professor’s question:
 {{professor_question}}
@@ -381,18 +414,31 @@ Do not impose a fixed minimum as an automatic scoring rule. Response length matt
 only when it results in insufficient development.
 Base every criticism on observable evidence from the candidate’s response.
 Do not reveal private chain-of-thought reasoning. Provide concise scoring justification.
-REFINEMENT RULES
-Produce a revised response targeting a 5/5 task score.
-The revised response must:
-preserve the candidate’s main position whenever it answers the question;
-retain useful original reasoning and examples;
-add or clarify support only where necessary;
-make a meaningful contribution to the existing discussion;
-improve relevance, elaboration, coherence, syntax, vocabulary, and accuracy;
+REVISION RULES
+Produce two complete revised responses.
+
+Revision 1 — Minimal-Edit 5/5 Version
+Target a 5/5 task score using the lightest edits that can credibly achieve that quality.
+Preserve the candidate’s wording, sentence order, organization, position, reasoning,
+and examples wherever possible. Correct all score-limiting problems in relevance,
+elaboration, coherence, syntax, vocabulary, grammar, and mechanics. Do not intentionally
+leave an error or weakness merely to keep the revision slight. Rephrase, reorder,
+remove, or add material only where necessary for 5/5 quality. If slight edits alone
+cannot credibly achieve 5/5, make the smallest additional changes required while
+keeping the response as close to the original as possible.
+
+Revision 2 — Enhanced 5/5 Version
+Produce a very strong 5/5 version with greater freedom to improve relevance,
+elaboration, coherence, syntax, vocabulary, and accuracy. It may make more changes
+than Revision 1, but it must not become a completely different response. Preserve the
+candidate’s main position, useful reasoning, and examples, add or clarify support where
+necessary, and make a meaningful contribution to the existing discussion.
+
+Both revised responses must:
 remain realistic for the ten-minute TOEFL task;
 avoid unsupported specialized facts;
 avoid unnecessarily advanced or unnatural language;
-not mention scores, evaluation, or the revision process.
+not mention scores, evaluation, or the revision process within the revised response.
 
 OUTPUT FORMAT
 Return only Markdown. Do not return JSON, XML, YAML, a code fence, or commentary
@@ -564,13 +610,29 @@ all bracketed instructions with the assessment content. If no issue applies, wri
 - **Score:** [One integer from 0 to 5.]
 - **Performance level:** `nonresponse`, `unsuccessful`, `mostly_unsuccessful`, `partially_successful`, `generally_successful`, or `fully_successful`
 
-## Top-Band Refinement
+## Revised Responses
 
-### Revision Strategy
+### Minimal-Edit 5/5 Revision
 
-- [Briefly state a major change made to relevance, elaboration, coherence, syntax, vocabulary, or accuracy.]
+- **Target score:** 5
 
-### Refined Response
+#### Revision Strategy
+
+- [Briefly state the smallest changes needed to reach 5/5 while preserving the original response as closely as possible.]
+
+#### Revised Response
+
+[Write the complete minimal-edit 5/5 version here. Preserve as much original wording and structure as possible, but correct every score-limiting problem.]
+
+### Enhanced 5/5 Revision
+
+- **Target score:** 5
+
+#### Revision Strategy
+
+- [Briefly state the broader improvements made while keeping the response recognizably based on the candidate’s work.]
+
+#### Revised Response
 
 [Write the complete, realistic 5/5 Academic Discussion response here while preserving the candidate’s relevant position and useful original ideas.]
 """.strip()
