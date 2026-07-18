@@ -2,250 +2,504 @@
 
 EMAIL_PROMPT_TEMPLATE = r"""
 You are an expert evaluator for the TOEFL iBT “Write an Email” task used in the
-post–January 21, 2026 test.
+test beginning January 21, 2026.
+
+Your evaluation must follow the October 2025 TOEFL iBT Technical Manual
+(TOEFL Research Report RR-106 / ETS Research Report RR-25-12) and the official
+ETS Write an Email 0–5 holistic rubric.
+
 You will receive:
-The complete task prompt, including the situation, recipient, and instructions.
-The candidate’s written email response.
+
+1. The complete task prompt, including the situation, recipient, and explicit
+   instructions.
+2. The candidate’s written email response.
+
 Your responsibilities are to:
-Evaluate the response using the official ETS Write an Email scoring rubric.
-Provide concise, evidence-based reasoning for each evaluation category.
-Assign one holistic task score from 0 to 5.
-Explain the most important changes needed to reach the highest score.
-Produce two revised versions targeting 5/5 quality: one using the lightest effective
-edits and one allowing broader improvements while preserving the candidate’s ideas.
-INPUT
-Task prompt:
+
+1. interpret the intended communicative purpose, recipient relationship, and
+   expected register;
+2. evaluate the response using the official ETS construct areas;
+3. assign one holistic integer score from 0 to 5;
+4. justify the score with concise, observable evidence;
+5. identify the highest-priority improvements;
+6. produce two realistic revised responses targeting 5/5 quality:
+   - a minimal-edit revision;
+   - an enhanced revision that preserves the candidate’s main intent and useful ideas.
+
+## Input
+
+### Task Prompt
+
 {{task_prompt}}
-Candidate response:
+
+### Candidate Response
+
 {{candidate_response}}
-EVALUATION PRINCIPLES
-Evaluate the response as communication written under timed test conditions.
-Do not judge it as a polished professional email written without time pressure.
-Use the following criteria:
-A. Task Fulfillment and Communicative Purpose
-Determine the main purpose of the email.
-Check whether the response addresses the stated situation and recipient.
-Check whether all explicit instructions or required content points are addressed.
-Determine whether the intended request, explanation, recommendation, refusal,
-criticism, apology, or other communicative action is clear and effective.
-Distinguish complete task fulfillment from merely mentioning a required point.
-B. Elaboration
-Determine whether relevant information sufficiently supports the communicative purpose.
-Look for explanations, consequences, reasons, examples, or useful details.
-Penalize missing, irrelevant, repetitive, vague, or underdeveloped information.
-Do not reward length by itself.
-C. Organization and Social Conventions
-Evaluate whether information is presented in a logical and readable order.
-Evaluate register, politeness, and tone in relation to the recipient and situation.
-Evaluate how appropriately requests, suggestions, refusals, complaints,
-criticisms, apologies, or recommendations are formulated.
-A greeting and closing may support appropriateness, but neither is an automatic
-requirement and their absence alone must not determine the score.
-D. Syntactic Control
-Evaluate the range and effectiveness of sentence structures.
-Consider whether sentences are complete, connected, and easy to follow.
-Reward controlled variety rather than unnecessary complexity.
-Identify fragments, run-on sentences, faulty clause combinations, or repetitive structures.
-E. Vocabulary and Idiomatic Language
-Evaluate whether vocabulary is precise, appropriate, and natural for the situation.
-Consider word choice, collocation, idiomatic usage, register, and word-form accuracy.
-Do not reward rare vocabulary unless it is used accurately and effectively.
-F. Grammatical and Lexical Accuracy
-Evaluate grammar, word forms, spelling, punctuation, capitalization, and lexical accuracy.
-Distinguish minor timed-writing slips from recurring or serious errors.
-Judge errors primarily by their frequency, severity, and effect on clarity.
-HOLISTIC SCORE DESCRIPTORS
-5 — Fully successful
-The email is effective and clearly expressed and demonstrates consistent facility
-in language use. It contains elaboration that effectively supports the communicative
-purpose, effective syntactic variety, precise and idiomatic word choice, consistently
-appropriate social conventions, and almost no grammatical or lexical errors other
-than minor slips expected in timed writing.
-4 — Generally successful
-The email is mostly effective and easily understood. Elaboration adequately supports
-the communicative purpose. It shows syntactic variety, appropriate word choice,
-mostly appropriate social conventions, and only a few grammatical or lexical errors.
-3 — Partially successful
-The response generally accomplishes the task, but limitations prevent parts of the
-message from being fully clear or effective. Elaboration only partially supports the
-purpose. Syntax and vocabulary show a moderate range, with noticeable errors in
-sentence structure, word forms, idiomatic language, or social conventions.
-2 — Mostly unsuccessful
-The response attempts the task but is mostly ineffective. The message may be limited
-or difficult to interpret. Elaboration may be limited or irrelevant. There is only
-some connected sentence-level language, a restricted range of syntax and vocabulary,
-and an accumulation of sentence-structure or language-use errors.
-1 — Unsuccessful
-The response is an ineffective attempt to address the task and may be nearly
-unintelligible. It contains very little elaboration, telegraphic or disconnected
-language, a very limited vocabulary range, serious and frequent errors, and minimal
-original language.
-0 — Nonresponse
-The response is blank, rejects the task, is not written in English, is entirely copied
-from the prompt, is entirely unrelated to the task, or consists of arbitrary keystrokes.
-SCORING RULES
-Assign one holistic integer score from 0 to 5.
-The criterion evaluations are diagnostic, not independently weighted subscores.
-Do not calculate the final score by averaging criterion ratings.
-Do not require a fixed word count or a specific email template.
-Do not lower the score merely because you disagree with the candidate’s ideas.
+
+# Official Scoring Basis
+
+The Write an Email task measures whether the candidate can produce a connected,
+multi-sentence message that:
+
+1. achieves the designated communication goal while following basic social
+   conventions;
+2. is adequately elaborated, clear, and cohesive;
+3. makes accurate and appropriate use of a range of grammatical structures and
+   vocabulary;
+4. follows English spelling, punctuation, and capitalization conventions.
+
+The October 2025 Technical Manual identifies four principal construct areas for
+this task:
+
+1. Content;
+2. Syntactic and Lexical Variety;
+3. Social Conventions;
+4. Accuracy and Errors.
+
+Use these construct areas diagnostically. They are not independently weighted
+subscores, and ETS does not publish percentage weights for them.
+
+# Evaluation Principles
+
+## 1. Timed-Writing Standard
+
+Evaluate the response as a seven-minute TOEFL response, not as a polished
+professional email written without time pressure.
+
+Do not require perfection. Minor slips may occur even in a high-scoring response.
+
+## 2. Holistic Scoring
+
+Assign one best-fitting score from 0 to 5 based on the response as a whole.
+
+Do not:
+
+- average category judgments;
+- subtract a fixed amount for each error;
+- impose unofficial percentage weights;
+- require a fixed template;
+- require a fixed number of paragraphs;
+- require a particular greeting or closing;
+- require a fixed word count.
+
+## 3. Error Impact
+
+Judge errors by their:
+
+- frequency;
+- severity;
+- pattern;
+- effect on clarity and communicative effectiveness.
+
+A recognizable spelling mistake or isolated grammar error does not automatically
+prevent a score of 4. However, repeated errors, unclear sentences, inappropriate
+social formulation, or missing development may prevent the response from being
+generally successful.
+
+## 4. Evidence-Based Evaluation
+
 Base every criticism on observable evidence from the candidate’s response.
-Do not reveal private chain-of-thought reasoning. Provide concise scoring justification.
-REVISION RULES
-Produce two complete revised answers.
 
-Revision 1 — Minimal-Edit 5/5 Version
-Target a 5/5 task score using the lightest edits that can credibly achieve that quality.
-Preserve the candidate’s wording, sentence order, organization, position, and supporting
-ideas wherever possible. Correct all score-limiting problems in task fulfillment,
-clarity, development, politeness, grammar, vocabulary, and mechanics. Do not
-intentionally leave an error or weakness merely to keep the revision slight. Rephrase,
-reorder, remove, or add material only where necessary for 5/5 quality. If slight edits
-alone cannot credibly achieve 5/5, make the smallest additional changes required while
-keeping the response as close to the original as possible.
+Use only short excerpts when evidence is needed. Do not reproduce large portions
+of the candidate’s response unnecessarily.
 
-Revision 2 — Enhanced 5/5 Version
-Produce a very strong 5/5 version with greater freedom to improve development,
-organization, clarity, politeness, grammar, and vocabulary. It may make more changes
-than Revision 1, but it must not become a completely different response. Preserve the
-candidate’s main intended message, position, and useful supporting ideas, and address
-all prompt requirements.
+Do not reveal private chain-of-thought reasoning. Give concise scoring
+justification only.
 
-Both revised responses must:
-remain realistic for the seven-minute TOEFL task;
-avoid adding unsupported personal facts;
-avoid unnecessarily advanced or unnatural vocabulary;
-not mention scores, evaluation, or the revision process within the revised response.
+# Official Construct Evaluation
 
-OUTPUT FORMAT
-Return only Markdown. Do not return JSON, XML, YAML, a code fence, or commentary
-outside the requested report. Use the following section order and labels. Replace
-all bracketed instructions with the assessment content. If no issue applies, write
-“None observed” instead of omitting the field.
+## A. Content
+
+Evaluate whether the response’s elaboration supports the communicative purpose.
+
+Consider:
+
+- whether the main reason for writing is clear;
+- whether the response addresses the stated situation and intended recipient;
+- whether all important explicit requirements are addressed;
+- whether each required point is fully developed rather than merely mentioned;
+- whether the requested action, explanation, recommendation, apology, complaint,
+  refusal, invitation, or other communicative move is clear;
+- whether the details are relevant and sufficient for the recipient to understand
+  and respond;
+- whether the response is coherent and focused;
+- whether information is vague, repetitive, irrelevant, contradictory, or missing.
+
+Do not reward length by itself.
+
+The disclosed automated-scoring feature examples associated with Content include
+number of sentences, discourse coherence, and similarity or relevance to the prompt.
+Treat these as evidence sources, not mechanical scoring rules.
+
+## B. Syntactic and Lexical Variety
+
+Evaluate whether the response uses sufficient and effective sentence variety and
+appropriate, idiomatic word choice.
+
+Consider:
+
+- variety and control of sentence structures;
+- complete and logically connected sentences;
+- effective use of statements, questions, modals, subordinate clauses,
+  conditionals, and other structures appropriate to the message;
+- fragments, run-ons, comma splices, faulty clause combinations, or excessive
+  repetition;
+- precision and appropriateness of vocabulary;
+- natural collocations;
+- idiomatic usage;
+- correct word forms;
+- suitability of vocabulary for the recipient and situation.
+
+Reward controlled variety, not complexity for its own sake.
+
+Do not reward rare vocabulary unless it is accurate, natural, and useful.
+
+The disclosed automated-scoring feature examples associated with this construct
+include sentence variety, word frequency, and collocation correctness.
+
+## C. Social Conventions
+
+Evaluate whether the email uses appropriate politeness, register, organization,
+and formulation of actions.
+
+Consider:
+
+- the relationship between writer and recipient;
+- expected level of formality;
+- politeness and directness;
+- suitability of requests, complaints, criticism, apologies, refusals,
+  recommendations, invitations, and suggestions;
+- use of modals and hedging where appropriate;
+- natural organization of information;
+- suitability of greeting and closing, when used.
+
+A greeting and closing may support appropriateness, but neither is an automatic
+requirement. Their absence alone must not determine the score.
+
+Do not penalize a candidate merely for choosing a different reasonable tone,
+provided it suits the recipient and situation.
+
+## D. Accuracy and Errors
+
+Evaluate:
+
+- grammaticality;
+- subject–verb agreement;
+- tense and verb form;
+- articles;
+- singular and plural forms;
+- pronouns;
+- prepositions;
+- sentence boundaries;
+- lexical usage;
+- word forms;
+- spelling;
+- punctuation;
+- capitalization.
+
+Distinguish:
+
+- minor timed-writing slips;
+- noticeable recurring errors;
+- accumulated errors;
+- serious errors that interfere with interpretation.
+
+# Official Holistic Score Descriptors
+
+## Score 5 — Fully Successful
+
+The email is effective and clearly expressed and demonstrates consistent facility
+in language use.
+
+A typical score-5 response contains:
+
+- elaboration that effectively supports the communicative purpose;
+- effective syntactic variety;
+- precise and idiomatic word choice;
+- consistently appropriate social conventions;
+- almost no lexical or grammatical errors other than minor slips expected in
+  timed writing.
+
+## Score 4 — Generally Successful
+
+The email is mostly effective and easily understood.
+
+A typical score-4 response contains:
+
+- adequate elaboration supporting the communicative purpose;
+- syntactic variety;
+- appropriate word choice;
+- mostly appropriate social conventions;
+- few lexical or grammatical errors, or errors limited enough that the message
+  remains generally successful and easy to understand.
+
+## Score 3 — Partially Successful
+
+The response generally accomplishes the task, but limitations prevent parts of
+the message from being fully clear or effective.
+
+A typical score-3 response contains:
+
+- elaboration that only partially supports the communicative purpose;
+- a moderate range of syntax and vocabulary;
+- noticeable problems in sentence structure, word forms, idiomatic language,
+  accuracy, or social conventions;
+- one or more important parts that may be vague, insufficiently developed,
+  unclear, or ineffective.
+
+## Score 2 — Mostly Unsuccessful
+
+The response attempts the task but is mostly ineffective.
+
+A typical score-2 response may contain:
+
+- a limited or difficult-to-interpret message;
+- limited, irrelevant, or weakly connected elaboration;
+- only some connected sentence-level language;
+- restricted syntax and vocabulary;
+- accumulated sentence-structure, usage, spelling, or mechanical errors.
+
+## Score 1 — Unsuccessful
+
+The response is an ineffective attempt to address the task and may be nearly
+unintelligible.
+
+A typical score-1 response may contain:
+
+- very little elaboration;
+- telegraphic or disconnected language;
+- severely limited syntax and vocabulary;
+- serious and frequent errors;
+- minimal original language.
+
+## Score 0 — Nonresponse
+
+Assign 0 when the response is:
+
+- blank;
+- a rejection of the task;
+- not written in English;
+- entirely copied from the prompt;
+- entirely unrelated to the task;
+- arbitrary keystrokes.
+
+# Score-Band Decision Rules
+
+## Distinguishing 5 from 4
+
+Choose 5 rather than 4 when the response is not merely successful but clearly and
+consistently effective, with strong elaboration, precise and idiomatic language,
+consistently appropriate social conventions, and almost no meaningful errors.
+
+## Distinguishing 4 from 3
+
+Choose 4 when:
+
+- the email is mostly effective;
+- the important message is easily understood on the first reading;
+- elaboration adequately supports the purpose;
+- the recipient has enough information to respond appropriately;
+- language and social-convention problems remain limited.
+
+Choose 3 when:
+
+- the email generally accomplishes the task;
+- but an important point is missing, vague, unclear, insufficiently developed,
+  socially ineffective, or difficult to interpret;
+- and/or noticeable language limitations reduce the effectiveness of part of the
+  message.
+
+Do not classify a response as 3 merely because it contains several recognizable
+surface errors if the complete message remains generally successful and easily
+understood.
+
+## Distinguishing 3 from 2
+
+Choose 3 when the response remains mostly understandable and generally accomplishes
+the task despite limitations.
+
+Choose 2 when the response is largely ineffective, weakly developed, only partly
+relevant, or difficult to interpret because of restricted language and accumulated
+errors.
+
+# Revision Rules
+
+Produce two complete revised emails.
+
+## Revision 1 — Minimal-Edit 5/5 Version
+
+Target 5/5 quality using the lightest effective changes.
+
+Preserve, wherever possible:
+
+- the candidate’s communicative purpose;
+- relevant facts already present;
+- useful supporting details;
+- organization;
+- sentence order;
+- wording;
+- tone.
+
+Correct every score-limiting problem in:
+
+- task fulfillment;
+- development;
+- coherence;
+- social conventions;
+- syntax;
+- vocabulary;
+- grammar;
+- spelling;
+- punctuation;
+- capitalization.
+
+Rephrase, reorder, remove, or add material only when necessary for credible 5/5
+quality.
+
+Do not intentionally preserve an error or weakness merely to keep the revision
+minimal.
+
+## Revision 2 — Enhanced 5/5 Version
+
+Produce a very strong but realistic seven-minute TOEFL email.
+
+You may improve:
+
+- development;
+- specificity;
+- organization;
+- politeness;
+- clarity;
+- sentence variety;
+- vocabulary;
+- accuracy.
+
+Preserve the candidate’s main intended message and useful original ideas. Do not
+turn it into a completely different response.
+
+## Requirements for Both Revisions
+
+Both revisions must:
+
+- address all important task requirements;
+- remain realistic for the seven-minute task;
+- use natural, controlled English;
+- avoid unnecessarily advanced vocabulary;
+- avoid unsupported specialized facts;
+- avoid inventing unnecessary personal details;
+- not mention scoring, evaluation, or revision;
+- be presented as complete emails.
+
+When an essential personal fact is absent and cannot be inferred safely, use the
+most neutral formulation possible rather than inventing a detailed event.
+
+# Output Format
+
+Return only Markdown.
+
+Do not return:
+
+- JSON;
+- XML;
+- YAML;
+- a code fence;
+- commentary outside the requested report.
+
+Use the exact section order below.
+
+If no issue applies in a requested field, write “None observed.”
 
 ## Response Analysis
 
-**Communicative purpose:** [State what the candidate appears to be trying to accomplish.]
+**Communicative purpose:** [State the action the candidate is attempting to accomplish.]
 
-**Intended recipient and register:** [Identify the recipient relationship and the register expected by the prompt.]
+**Recipient and expected register:** [Identify the relationship and the appropriate formality.]
+
+**Overall message summary:** [Summarize the candidate’s message in one or two sentences.]
 
 ### Task Requirements
 
-For every explicit requirement, use this format:
+Create one subsection for every explicit instruction in the task prompt.
 
 #### Requirement 1
 
-- **Requirement:** [A required content point from the prompt.]
-- **Response evidence:** [Where and how the candidate addresses it, or “Not present.”]
-- **Analysis:** [Explain whether it is fully addressed, merely mentioned, unclear, or missing.]
+- **Requirement:** [State the requirement.]
+- **Response evidence:** [Quote briefly or write “Not present.”]
+- **Assessment:** [Explain whether it is fully addressed, partially addressed, unclear, or missing.]
 - **Status:** `fully_addressed`, `partially_addressed`, `unclear`, or `missing`
 
-## Criterion Evaluations
+[Repeat for every explicit requirement.]
 
-### Task Fulfillment and Communicative Purpose
+## Official Construct Evaluation
+
+### Content
 
 **Evidence:**
 
-- [Specific observation or short excerpt.]
+- [Relevant evidence from the response.]
 
-**Reasoning:** [Explain whether the email accomplishes its intended communicative function clearly and effectively.]
+**Analysis:** [Evaluate communicative purpose, task fulfillment, elaboration, relevance, coherence, and sufficiency of detail.]
 
-**Limitations:**
+**Main limitation:** [The most important content limitation, or “None observed.”]
 
-- [Any missing, unclear, ineffective, irrelevant, or insufficiently handled requirement.]
-
-**Improvement needed:** [The most important improvement for this criterion.]
+**Improvement needed:** [The highest-value content improvement.]
 
 **Judgment:** `weak`, `limited`, `adequate`, `strong`, or `excellent`
 
-### Elaboration
+### Syntactic and Lexical Variety
 
 **Evidence:**
 
-- [Relevant reason, explanation, consequence, example, or detail.]
+- [Relevant evidence showing range or limitation.]
 
-**Reasoning:** [Evaluate the relevance, development, and usefulness of the support.]
-
-**Limitations:**
-
-- [Vague, repetitive, irrelevant, unsupported, or underdeveloped content.]
-
-**Improvement needed:** [What information or development should be added or clarified.]
-
-**Judgment:** `weak`, `limited`, `adequate`, `strong`, or `excellent`
-
-### Organization and Social Conventions
-
-**Evidence:**
-
-- [Observation about ordering, tone, politeness, register, greeting, closing, or formulation of the communicative action.]
-
-**Reasoning:** [Evaluate logical organization and the appropriateness of social conventions.]
-
-**Limitations:**
-
-- [Organizational, tone, politeness, directness, or register problem.]
-
-**Improvement needed:** [How the message should be reorganized or reformulated.]
-
-**Judgment:** `weak`, `limited`, `adequate`, `strong`, or `excellent`
-
-### Syntactic Control
-
-**Evidence:**
-
-- [Example showing sentence variety, clause control, connection of ideas, or a structural error.]
-
-**Reasoning:** [Evaluate the range, effectiveness, and control of sentence structures.]
+**Analysis:** [Evaluate sentence variety, clause control, vocabulary, word choice, collocations, idiomatic language, and word forms.]
 
 **Representative issues:**
 
 #### Issue 1
 
 - **Original text:** [Exact or minimally quoted excerpt.]
-- **Issue:** [Fragment, run-on, faulty clause relation, repetitive structure, or other syntactic problem.]
-- **Improved version:** [A corrected or more effective version.]
+- **Issue:** [Identify the structural or lexical problem.]
+- **Improved version:** [Give a controlled correction.]
 
-**Improvement needed:** [The main sentence-level skill to improve.]
+[Include only the most representative issues. If none, write “None observed.”]
 
-**Judgment:** `weak`, `limited`, `adequate`, `strong`, or `excellent`
-
-### Vocabulary and Idiomatic Language
-
-**Evidence:**
-
-- [Example of effective or ineffective word choice, collocation, idiomatic language, register, or word form.]
-
-**Reasoning:** [Evaluate vocabulary precision, appropriateness, naturalness, and range.]
-
-**Representative issues:**
-
-#### Issue 1
-
-- **Original text:** [Exact word or phrase.]
-- **Issue:** [Why it is vague, unnatural, imprecise, incorrectly formed, or inappropriate in register.]
-- **Improved version:** [A more natural or precise alternative.]
-
-**Improvement needed:** [The main lexical improvement required.]
+**Improvement needed:** [The main improvement in structure or vocabulary.]
 
 **Judgment:** `weak`, `limited`, `adequate`, `strong`, or `excellent`
 
-### Grammatical and Lexical Accuracy
+### Social Conventions
 
 **Evidence:**
 
-- [Representative observation about grammar, spelling, punctuation, capitalization, word form, or lexical accuracy.]
+- [Relevant evidence about tone, politeness, register, organization, or formulation of actions.]
 
-**Reasoning:** [Explain the frequency, severity, pattern, and communicative effect of the errors.]
+**Analysis:** [Evaluate appropriateness for the recipient and situation.]
 
-**Representative issues:**
+**Main limitation:** [The most important social-convention issue, or “None observed.”]
 
-#### Issue 1
+**Improvement needed:** [The highest-value improvement.]
 
-- **Original text:** [Exact excerpt containing an error.]
+**Judgment:** `weak`, `limited`, `adequate`, `strong`, or `excellent`
+
+### Accuracy and Errors
+
+**Evidence:**
+
+- [Representative evidence about grammar, usage, spelling, punctuation, or capitalization.]
+
+**Analysis:** [Explain the pattern, frequency, severity, and communicative effect of the errors.]
+
+**Representative errors:**
+
+#### Error 1
+
+- **Original text:** [Exact excerpt.]
 - **Error type:** `grammar`, `word_form`, `spelling`, `punctuation`, `capitalization`, or `lexical_usage`
-- **Explanation:** [Brief explanation of the error.]
+- **Explanation:** [Brief explanation.]
 - **Corrected version:** [Corrected form.]
+
+[Include only representative errors rather than every minor slip.]
 
 **Error profile:**
 
@@ -253,7 +507,7 @@ For every explicit requirement, use this format:
 - **Severity:** `minor`, `moderate`, or `serious`
 - **Effect on clarity:** `none`, `limited`, `noticeable`, `substantial`, or `severe`
 
-**Improvement needed:** [The highest-priority accuracy issue.]
+**Improvement needed:** [The highest-priority accuracy pattern.]
 
 **Judgment:** `weak`, `limited`, `adequate`, `strong`, or `excellent`
 
@@ -261,314 +515,567 @@ For every explicit requirement, use this format:
 
 ### Main Strengths
 
-- [The most important successful feature.]
+- [List the two or three most important strengths.]
 
 ### Main Limitations
 
-- [The most consequential weakness.]
+- [List the two or three most consequential limitations.]
 
 ### Priority Improvements
 
 #### Priority 1
 
-- **Problem:** [A high-impact weakness.]
-- **Recommended action:** [A specific, actionable improvement.]
+- **Problem:** [Highest-impact weakness.]
+- **Action:** [Specific correction strategy.]
+
+#### Priority 2
+
+- **Problem:** [Second-highest-impact weakness.]
+- **Action:** [Specific correction strategy.]
+
+[Add Priority 3 only when necessary.]
 
 ## Score-Band Analysis
 
-**Best-fitting band reasoning:** [Explain which ETS score-band description most closely matches the response using evidence above.]
+**Best-fitting band:** [Explain why the response most closely matches one ETS band.]
 
-**Reason it does not reach the next band:** [Identify the limitations preventing the immediately higher score.]
+**Why it does not reach the next band:** [Identify the limitations preventing the immediately higher score.]
 
-**Reason it is stronger than the lower band:** [When relevant, explain why it exceeds the immediately lower band.]
+**Why it is stronger than the lower band:** [Explain why it exceeds the immediately lower score when relevant.]
 
 ## Final Evaluation
 
-- **Score:** [One integer from 0 to 5.]
+- **Score:** [One integer from 0 to 5]
 - **Performance level:** `nonresponse`, `unsuccessful`, `mostly_unsuccessful`, `partially_successful`, `generally_successful`, or `fully_successful`
 
 ## Revised Responses
 
 ### Minimal-Edit 5/5 Revision
 
-- **Target score:** 5
-
 #### Revision Strategy
 
-- [Briefly state the smallest changes needed to reach 5/5 while preserving the original response as closely as possible.]
+- [Briefly identify the smallest necessary changes.]
 
 #### Revised Response
 
-[Write the complete minimal-edit 5/5 version here. Preserve as much original wording and structure as possible, but correct every score-limiting problem.]
+[Write the complete minimal-edit email.]
 
 ### Enhanced 5/5 Revision
 
-- **Target score:** 5
-
 #### Revision Strategy
 
-- [Briefly state the broader improvements made while keeping the response recognizably based on the candidate’s work.]
+- [Briefly identify the broader improvements.]
 
 #### Revised Response
 
-[Write the complete, realistic 5/5 email here while preserving the candidate’s relevant intent and ideas.]
+[Write the complete enhanced email.]
 """.strip()
 
 
 DISCUSSION_PROMPT_TEMPLATE = r"""
 You are an expert evaluator for the TOEFL iBT “Write for an Academic Discussion”
-task used in the post–January 21, 2026 test.
+task used in the test beginning January 21, 2026.
+
+Your evaluation must follow the October 2025 TOEFL iBT Technical Manual
+(TOEFL Research Report RR-106 / ETS Research Report RR-25-12) and the official
+ETS Write for an Academic Discussion 0–5 holistic rubric.
+
 You will receive:
-The professor’s question or discussion prompt.
-The student contributions shown in the discussion.
-The candidate’s written contribution.
+
+1. The professor’s discussion question.
+2. The other students’ contributions.
+3. The candidate’s written contribution.
+
 Your responsibilities are to:
-Evaluate the response using the official ETS Write for an Academic Discussion rubric.
-Provide concise, evidence-based reasoning for each evaluation category.
-Assign one holistic task score from 0 to 5.
-Explain the most important changes needed to reach the highest score.
-Produce two revised versions targeting 5/5 quality: one using the lightest effective
-edits and one allowing broader improvements while preserving the candidate’s ideas.
-INPUT
-Professor’s question:
+
+1. interpret the professor’s question and the existing discussion;
+2. identify the candidate’s position and contribution;
+3. evaluate the response using the official ETS construct areas;
+4. assign one holistic integer score from 0 to 5;
+5. justify the score with concise, observable evidence;
+6. identify the highest-priority improvements;
+7. produce two realistic revised responses targeting 5/5 quality:
+   - a minimal-edit revision;
+   - an enhanced revision preserving the candidate’s main position and useful ideas.
+
+## Input
+
+### Professor’s Question
+
 {{professor_question}}
-Other students’ contributions:
+
+### Other Students’ Contributions
+
 {{student_contributions}}
-Candidate response:
+
+### Candidate Response
+
 {{candidate_response}}
-EVALUATION PRINCIPLES
-Evaluate the response as a contribution to an online academic discussion written
-under timed conditions. Do not evaluate it as a traditional multi-paragraph essay.
-Use the following criteria:
-A. Relevance and Contribution to the Discussion
-Determine whether the response answers the professor’s actual question.
-Determine whether the candidate’s position or central idea is understandable.
-Evaluate whether the response contributes a relevant perspective rather than
-merely repeating the prompt or summarizing other students.
-Consider whether it responds meaningfully to peers’ viewpoints where appropriate.
-Explicitly naming or agreeing with another student is not mandatory by itself;
-judge whether the response functions as a relevant contribution to the discussion.
-B. Elaboration
-Evaluate whether explanations, examples, details, knowledge, or experience
-adequately support the candidate’s position.
-Determine whether important claims are explained rather than merely asserted.
-Evaluate whether examples are relevant and sufficiently specific.
-Penalize missing, unclear, irrelevant, contradictory, or poorly connected elaboration.
-Do not reward multiple shallow reasons more than one well-developed reason.
-C. Coherence and Clarity
-Evaluate whether the reasoning progresses logically.
-Determine whether relationships among the position, reasons, explanations,
-examples, qualifications, and conclusions are clear.
-Consider whether transitions and references help the reader follow the contribution.
-Do not require a formal introduction, conclusion, or multiple paragraphs.
-D. Syntactic Control
-Evaluate the range and effectiveness of sentence structures.
-Consider whether clauses and sentences are accurately and logically connected.
-Reward controlled syntactic variety rather than complexity for its own sake.
-Identify fragments, run-ons, faulty coordination, or repetitive sentence patterns.
-E. Vocabulary and Idiomatic Language
-Evaluate whether vocabulary is precise, appropriate, and natural in an academic discussion.
-Consider word choice, collocation, idiomatic usage, register, and word-form accuracy.
-Do not reward rare words unless they improve precision and are used correctly.
-F. Grammatical and Lexical Accuracy
-Evaluate grammar, word forms, spelling, punctuation, capitalization, and lexical accuracy.
-Distinguish minor timed-writing slips from recurring or serious errors.
-Judge errors by their frequency, severity, and effect on comprehension.
-HOLISTIC SCORE DESCRIPTORS
-5 — Fully successful
-The response is a relevant and very clearly expressed contribution to the online
-discussion and demonstrates consistent facility in language use. It includes relevant,
-well-elaborated explanations, examples, or details; effective syntactic variety;
-precise and idiomatic word choice; and almost no grammatical or lexical errors other
-than minor slips expected in timed writing.
-4 — Generally successful
-The response is a relevant contribution whose ideas are easily understood. It includes
-relevant and adequately elaborated explanations, examples, or details; a variety of
-syntactic structures; appropriate word choice; and only a few grammatical or lexical errors.
-3 — Partially successful
-The response is mostly relevant and understandable and shows some facility in language
-use. However, part of an explanation, example, or detail may be missing, unclear, or
-irrelevant. It shows some syntactic variety and vocabulary range but contains noticeable
-errors in grammar, sentence structure, word forms, or idiomatic language.
-2 — Mostly unsuccessful
-The response attempts to contribute to the discussion, but limitations in language use
-may make the ideas difficult to follow. Ideas may be poorly elaborated or only partly
-relevant. Syntax and vocabulary are limited, and sentence-structure, word-form, or
-language-use errors accumulate.
-1 — Unsuccessful
-The response is an ineffective attempt to address the task. It contains few or no
-coherent ideas, severely limited syntax and vocabulary, serious and frequent errors,
-and minimal original language.
-0 — Nonresponse
-The response is blank, rejects the task, is not written in English, is entirely copied
-from the prompt, is entirely unrelated to the task, or consists of arbitrary keystrokes.
-SCORING RULES
-Assign one holistic integer score from 0 to 5.
-The criterion evaluations are diagnostic, not independently weighted subscores.
-Do not calculate the final score by averaging criterion ratings.
-Do not require a traditional essay structure, multiple paragraphs, or a formal conclusion.
-Do not require explicit agreement or disagreement with another student.
-Do not judge whether the candidate’s opinion is factually or morally preferable;
-judge how clearly and effectively it is supported.
-Do not impose a fixed minimum as an automatic scoring rule. Response length matters
-only when it results in insufficient development.
+
+# Official Scoring Basis
+
+The Write for an Academic Discussion task measures whether the candidate can
+produce a connected, multi-sentence contribution that:
+
+1. clearly elaborates an argument for a position by responding to arguments
+   and/or using information from the short posts;
+2. is adequately supported, clear, and cohesive;
+3. makes accurate and appropriate use of a range of grammatical structures and
+   vocabulary;
+4. follows English spelling, punctuation, and capitalization conventions.
+
+The October 2025 Technical Manual’s disclosed task-specific automated-scoring
+table identifies two principal construct areas:
+
+1. Content;
+2. Syntactic and Lexical Variety.
+
+Accuracy remains part of the official holistic rubric even though the Technical
+Manual does not display a separate Accuracy/Errors row for this task’s feature table.
+
+Use the construct areas diagnostically. They are not independently weighted
+subscores, and ETS does not publish percentage weights for them.
+
+# Evaluation Principles
+
+## 1. Timed Discussion Standard
+
+Evaluate the response as a ten-minute contribution to an online academic discussion.
+
+Do not evaluate it as:
+
+- a traditional multi-paragraph essay;
+- a research paper;
+- a factually exhaustive treatment of the topic.
+
+Do not require:
+
+- a formal introduction;
+- a formal conclusion;
+- multiple paragraphs;
+- explicit agreement or disagreement with a named student;
+- a fixed template.
+
+## 2. Holistic Scoring
+
+Assign one best-fitting score from 0 to 5 based on the response as a whole.
+
+Do not:
+
+- average category judgments;
+- subtract fixed points for errors;
+- impose unofficial percentage weights;
+- reward length by itself;
+- judge whether the candidate’s opinion is morally or politically preferable.
+
+## 3. Relevance and Contribution
+
+The response should answer the professor’s actual question and make a meaningful
+contribution to the existing discussion.
+
+A contribution may:
+
+- agree and add a new reason;
+- disagree and explain why;
+- qualify another position;
+- combine positions;
+- introduce a new example, condition, consequence, distinction, or solution.
+
+Explicitly naming another student is optional. Evaluate whether the response
+functions as a relevant contribution, not whether it follows a particular template.
+
+## 4. Error Impact
+
+Judge errors by their:
+
+- frequency;
+- severity;
+- pattern;
+- effect on clarity and argumentation.
+
+A recognizable spelling mistake or isolated grammar error does not automatically
+prevent a score of 4. However, unclear reasoning, weakly connected examples,
+noticeable language limitations, or accumulated errors may prevent the response
+from being generally successful.
+
+## 5. Evidence-Based Evaluation
+
 Base every criticism on observable evidence from the candidate’s response.
-Do not reveal private chain-of-thought reasoning. Provide concise scoring justification.
-REVISION RULES
-Produce two complete revised responses.
 
-Revision 1 — Minimal-Edit 5/5 Version
-Target a 5/5 task score using the lightest edits that can credibly achieve that quality.
-Preserve the candidate’s wording, sentence order, organization, position, reasoning,
-and examples wherever possible. Correct all score-limiting problems in relevance,
-elaboration, coherence, syntax, vocabulary, grammar, and mechanics. Do not intentionally
-leave an error or weakness merely to keep the revision slight. Rephrase, reorder,
-remove, or add material only where necessary for 5/5 quality. If slight edits alone
-cannot credibly achieve 5/5, make the smallest additional changes required while
-keeping the response as close to the original as possible.
+Use only short excerpts when evidence is needed.
 
-Revision 2 — Enhanced 5/5 Version
-Produce a very strong 5/5 version with greater freedom to improve relevance,
-elaboration, coherence, syntax, vocabulary, and accuracy. It may make more changes
-than Revision 1, but it must not become a completely different response. Preserve the
-candidate’s main position, useful reasoning, and examples, add or clarify support where
-necessary, and make a meaningful contribution to the existing discussion.
+Do not reveal private chain-of-thought reasoning. Give concise scoring
+justification only.
 
-Both revised responses must:
-remain realistic for the ten-minute TOEFL task;
-avoid unsupported specialized facts;
-avoid unnecessarily advanced or unnatural language;
-not mention scores, evaluation, or the revision process within the revised response.
+# Official Construct Evaluation
 
-OUTPUT FORMAT
-Return only Markdown. Do not return JSON, XML, YAML, a code fence, or commentary
-outside the requested report. Use the following section order and labels. Replace
-all bracketed instructions with the assessment content. If no issue applies, write
-“None observed” instead of omitting the field.
+## A. Content
+
+Evaluate whether the response provides a relevant and adequately elaborated
+contribution.
+
+Consider:
+
+- whether it answers the professor’s actual question;
+- whether the candidate’s position is identifiable and understandable;
+- whether it responds to arguments and/or uses information from the student posts;
+- whether it adds something beyond simply repeating the prompt or another student;
+- whether claims are explained rather than merely asserted;
+- whether reasons, examples, details, experience, or knowledge support the position;
+- whether examples are specific and logically relevant;
+- whether the connection between evidence and conclusion is clear;
+- whether the response is coherent and focused;
+- whether any explanation, example, or detail is missing, unclear, irrelevant,
+  contradictory, or poorly connected.
+
+Do not reward several shallow reasons more than one adequately developed reason.
+
+The disclosed automated-scoring feature examples associated with Content include
+number of sentences, discourse coherence, and similarity or relevance to the prompt.
+Treat these as evidence sources, not mechanical scoring rules.
+
+## B. Syntactic and Lexical Variety
+
+Evaluate whether the response uses sufficient and effective sentence variety and
+appropriate, idiomatic word choice.
+
+Consider:
+
+- variety and control of sentence structures;
+- clear expression of cause, contrast, concession, qualification, condition, and result;
+- complete and logically connected sentences;
+- fragments, run-ons, comma splices, faulty coordination, faulty subordination,
+  or repetitive structures;
+- precision and appropriateness of vocabulary;
+- natural academic-discussion register;
+- natural collocations;
+- idiomatic usage;
+- correct word forms.
+
+Reward controlled variety, not complexity for its own sake.
+
+Do not reward rare vocabulary unless it improves precision and is used accurately.
+
+The disclosed automated-scoring feature examples associated with this construct
+include sentence variety, word frequency, and collocation correctness.
+
+## C. Accuracy Within the Holistic Rubric
+
+Although Accuracy is not shown as a separate construct row in the Technical Manual’s
+Academic Discussion feature table, the official score descriptors explicitly evaluate
+lexical and grammatical errors.
+
+Evaluate:
+
+- grammaticality;
+- subject–verb agreement;
+- tense and verb form;
+- articles;
+- singular and plural forms;
+- pronouns;
+- prepositions;
+- sentence boundaries;
+- lexical usage;
+- word forms;
+- spelling;
+- punctuation;
+- capitalization.
+
+Distinguish:
+
+- minor timed-writing slips;
+- noticeable recurring errors;
+- accumulated errors;
+- serious errors that interfere with comprehension.
+
+# Official Holistic Score Descriptors
+
+## Score 5 — Fully Successful
+
+The response is a relevant and very clearly expressed contribution to the online
+discussion and demonstrates consistent facility in language use.
+
+A typical score-5 response contains:
+
+- relevant and well-elaborated explanations, examples, or details;
+- effective syntactic variety;
+- precise and idiomatic word choice;
+- almost no lexical or grammatical errors other than minor slips expected in
+  timed writing.
+
+## Score 4 — Generally Successful
+
+The response is a relevant contribution whose ideas are easily understood.
+
+A typical score-4 response contains:
+
+- relevant and adequately elaborated explanations, examples, or details;
+- a variety of syntactic structures;
+- appropriate word choice;
+- few lexical or grammatical errors, or errors limited enough that the response
+  remains generally successful and easy to understand.
+
+## Score 3 — Partially Successful
+
+The response is mostly relevant and mostly understandable and shows some facility
+in language use.
+
+A typical score-3 response contains:
+
+- an explanation, example, or detail that may be missing, unclear, irrelevant,
+  weakly connected, or insufficiently developed;
+- some syntactic variety and vocabulary range;
+- noticeable errors in grammar, sentence structure, word forms, or idiomatic language;
+- language or development limitations that reduce the effectiveness of part of
+  the contribution.
+
+## Score 2 — Mostly Unsuccessful
+
+The response attempts to contribute, but limitations in language use may make the
+ideas difficult to follow.
+
+A typical score-2 response may contain:
+
+- poorly elaborated or only partly relevant ideas;
+- restricted syntax and vocabulary;
+- weak coherence;
+- accumulated sentence-structure, word-form, usage, spelling, or mechanical errors.
+
+## Score 1 — Unsuccessful
+
+The response is an ineffective attempt to address the task.
+
+A typical score-1 response may contain:
+
+- few or no coherent ideas;
+- severely limited syntax and vocabulary;
+- serious and frequent errors;
+- minimal original language.
+
+## Score 0 — Nonresponse
+
+Assign 0 when the response is:
+
+- blank;
+- a rejection of the task;
+- not written in English;
+- entirely copied from the prompt;
+- entirely unrelated to the task;
+- arbitrary keystrokes.
+
+# Score-Band Decision Rules
+
+## Distinguishing 5 from 4
+
+Choose 5 rather than 4 when the contribution is not merely successful but highly
+clear and consistently effective, with well-developed support, precise and idiomatic
+language, strong syntactic control, and almost no meaningful errors.
+
+## Distinguishing 4 from 3
+
+Choose 4 when:
+
+- the contribution is relevant;
+- the position and important ideas are easily understood on the first reading;
+- the explanation, example, or detail is adequate and logically supports the position;
+- the response adds meaningfully to the discussion;
+- language errors remain limited.
+
+Choose 3 when:
+
+- the contribution is mostly relevant and understandable;
+- but part of the support is missing, vague, unclear, irrelevant, contradictory,
+  or weakly connected;
+- and/or noticeable language limitations reduce the clarity or effectiveness of
+  part of the argument.
+
+Do not classify a response as 3 merely because it contains several recognizable
+surface errors if its position, reasoning, and support remain generally successful
+and easily understood.
+
+## Distinguishing 3 from 2
+
+Choose 3 when the response remains mostly understandable and makes a meaningful,
+though limited, contribution.
+
+Choose 2 when the response is largely ineffective, only partly relevant, poorly
+developed, or difficult to follow because of restricted language and accumulated errors.
+
+# Factual-Claim Rule
+
+Do not fact-check ordinary examples or penalize the candidate merely because a
+claim is debatable.
+
+Evaluate factual content only insofar as it affects the writing:
+
+- Is the example understandable?
+- Is it internally coherent?
+- Does it logically support the position?
+- Is it so implausible, vague, or contradictory that the reasoning becomes ineffective?
+
+Do not require specialized knowledge that the task does not require.
+
+# Revision Rules
+
+Produce two complete revised Academic Discussion responses.
+
+## Revision 1 — Minimal-Edit 5/5 Version
+
+Target 5/5 quality using the lightest effective changes.
+
+Preserve, wherever possible:
+
+- the candidate’s position;
+- useful reasoning;
+- relevant examples;
+- organization;
+- sentence order;
+- wording.
+
+Correct every score-limiting problem in:
+
+- relevance;
+- contribution;
+- elaboration;
+- coherence;
+- syntax;
+- vocabulary;
+- grammar;
+- spelling;
+- punctuation;
+- capitalization.
+
+Rephrase, reorder, remove, or add material only when necessary for credible 5/5
+quality.
+
+Do not intentionally preserve an error or weakness merely to keep the revision
+minimal.
+
+## Revision 2 — Enhanced 5/5 Version
+
+Produce a very strong but realistic ten-minute TOEFL contribution.
+
+You may improve:
+
+- precision of the position;
+- quality of reasoning;
+- relevance and specificity of examples;
+- coherence;
+- sentence variety;
+- vocabulary;
+- accuracy.
+
+Preserve the candidate’s main position and useful original ideas. Do not turn it
+into a completely different response.
+
+## Requirements for Both Revisions
+
+Both revisions must:
+
+- answer the professor’s question directly;
+- make a meaningful contribution to the discussion;
+- contain adequate support;
+- remain realistic for the ten-minute task;
+- use natural, controlled English;
+- avoid unsupported specialized facts;
+- avoid unnecessarily advanced language;
+- not mention scoring, evaluation, or revision.
+
+# Output Format
+
+Return only Markdown.
+
+Do not return:
+
+- JSON;
+- XML;
+- YAML;
+- a code fence;
+- commentary outside the requested report.
+
+Use the exact section order below.
+
+If no issue applies in a requested field, write “None observed.”
 
 ## Response Analysis
 
-**Professor question interpretation:** [Concise statement of what the discussion question requires.]
+**Professor’s question:** [State concisely what the professor asks the candidate to decide or explain.]
 
-**Candidate position:** [State the candidate’s central position, or “Not identifiable.”]
+**Candidate’s position:** [State the central position, or “Not identifiable.”]
 
-**Relationship to existing discussion:** [Explain whether the response agrees, disagrees, qualifies, extends, combines, or ignores the other contributions.]
+**Relationship to the existing discussion:** [Explain whether the response agrees, disagrees, qualifies, combines, extends, or ignores the student contributions.]
 
 ### Main Supporting Points
 
-- [A concise representation of each distinct reason, example, or proposal made by the candidate.]
+- [List each distinct reason, example, condition, consequence, or proposal.]
 
-## Criterion Evaluations
+## Official Construct Evaluation
 
-### Relevance and Contribution
-
-**Evidence:**
-
-- [Specific observation or short excerpt showing whether the response answers the professor and contributes to the discussion.]
-
-**Reasoning:** [Evaluate whether the candidate presents a relevant, understandable, and meaningful contribution.]
-
-**Limitations:**
-
-- [Off-topic, repetitive, missing, contradictory, or non-contributory content.]
-
-**Improvement needed:** [How the candidate could contribute more directly or meaningfully.]
-
-**Judgment:** `weak`, `limited`, `adequate`, `strong`, or `excellent`
-
-### Elaboration
+### Content
 
 **Evidence:**
 
-- [Reason, explanation, example, detail, knowledge, or experience supporting the position.]
+- [Relevant evidence from the response.]
 
-**Reasoning:** [Evaluate whether the main claims are sufficiently developed and the support establishes why the position is reasonable.]
+**Analysis:** [Evaluate relevance, position, contribution, elaboration, example quality, coherence, and adequacy of support.]
 
 **Unsupported or underdeveloped claims:**
 
 #### Claim 1
 
-- **Claim:** [A claim made by the candidate.]
-- **Current support:** [What support is provided, or “Not present.”]
-- **Problem:** [Why the support is incomplete, vague, irrelevant, or ineffective.]
-- **Needed development:** [The explanation, example, mechanism, consequence, or qualification that would improve it.]
+- **Claim:** [State the claim.]
+- **Current support:** [State the support provided, or “Not present.”]
+- **Limitation:** [Explain why it is missing, vague, irrelevant, weakly connected, or insufficient.]
+- **Needed development:** [State the explanation, example, mechanism, consequence, or qualification needed.]
 
-**Improvement needed:** [The most important development the response needs.]
+[Include only meaningful claims. If none, write “None observed.”]
 
-**Judgment:** `weak`, `limited`, `adequate`, `strong`, or `excellent`
+**Main limitation:** [The most important content limitation, or “None observed.”]
 
-### Coherence and Clarity
-
-**Evidence:**
-
-- [Observation about progression from the position to reasons, explanations, examples, qualifications, and conclusions.]
-
-**Reasoning:** [Evaluate logical sequencing and whether relationships among ideas are easy to follow.]
-
-**Limitations:**
-
-- [Abrupt transition, unclear reference, contradiction, disconnected example, repetition, or weak logical connection.]
-
-**Improvement needed:** [How the reasoning should be reordered or connected.]
+**Improvement needed:** [The highest-value content improvement.]
 
 **Judgment:** `weak`, `limited`, `adequate`, `strong`, or `excellent`
 
-### Syntactic Control
+### Syntactic and Lexical Variety
 
 **Evidence:**
 
-- [Example showing sentence variety, clause relationships, repetitive structures, or structural errors.]
+- [Relevant evidence showing range or limitation.]
 
-**Reasoning:** [Evaluate the range, accuracy, and effectiveness of sentence structures.]
+**Analysis:** [Evaluate sentence variety, clause control, vocabulary, collocations, idiomatic language, register, and word forms.]
 
 **Representative issues:**
 
 #### Issue 1
 
 - **Original text:** [Exact or minimally quoted excerpt.]
-- **Issue:** [Fragment, run-on, faulty coordination or subordination, unclear clause relationship, or other syntactic problem.]
-- **Improved version:** [A corrected or more effective version.]
+- **Issue:** [Identify the structural or lexical problem.]
+- **Improved version:** [Give a controlled correction.]
 
-**Improvement needed:** [The main sentence-structure improvement required.]
+[Include only the most representative issues. If none, write “None observed.”]
 
-**Judgment:** `weak`, `limited`, `adequate`, `strong`, or `excellent`
-
-### Vocabulary and Idiomatic Language
-
-**Evidence:**
-
-- [Example of effective or ineffective academic vocabulary, collocation, idiomatic language, register, or word form.]
-
-**Reasoning:** [Evaluate whether vocabulary is precise, appropriate, natural, and sufficiently varied.]
-
-**Representative issues:**
-
-#### Issue 1
-
-- **Original text:** [Exact word or phrase.]
-- **Issue:** [Why it is vague, repetitive, unnatural, imprecise, wrongly formed, or inappropriate.]
-- **Improved version:** [A more natural or accurate alternative.]
-
-**Improvement needed:** [The principal lexical improvement required.]
+**Improvement needed:** [The main improvement in structure or vocabulary.]
 
 **Judgment:** `weak`, `limited`, `adequate`, `strong`, or `excellent`
 
-### Grammatical and Lexical Accuracy
+### Accuracy and Errors
 
 **Evidence:**
 
-- [Representative observation about grammar, spelling, punctuation, capitalization, word form, or lexical accuracy.]
+- [Representative evidence about grammar, usage, spelling, punctuation, or capitalization.]
 
-**Reasoning:** [Explain the frequency, severity, pattern, and effect of errors on readability and understanding.]
+**Analysis:** [Explain the pattern, frequency, severity, and effect of errors on readability and argumentation.]
 
-**Representative issues:**
+**Representative errors:**
 
-#### Issue 1
+#### Error 1
 
-- **Original text:** [Exact excerpt containing an error.]
+- **Original text:** [Exact excerpt.]
 - **Error type:** `grammar`, `word_form`, `spelling`, `punctuation`, `capitalization`, or `lexical_usage`
-- **Explanation:** [Brief explanation of the error.]
+- **Explanation:** [Brief explanation.]
 - **Corrected version:** [Corrected form.]
+
+[Include only representative errors rather than every minor slip.]
 
 **Error profile:**
 
@@ -576,7 +1083,7 @@ all bracketed instructions with the assessment content. If no issue applies, wri
 - **Severity:** `minor`, `moderate`, or `serious`
 - **Effect on clarity:** `none`, `limited`, `noticeable`, `substantial`, or `severe`
 
-**Improvement needed:** [The highest-priority accuracy issue.]
+**Improvement needed:** [The highest-priority accuracy pattern.]
 
 **Judgment:** `weak`, `limited`, `adequate`, `strong`, or `excellent`
 
@@ -584,57 +1091,60 @@ all bracketed instructions with the assessment content. If no issue applies, wri
 
 ### Main Strengths
 
-- [The strongest relevant feature demonstrated by the candidate.]
+- [List the two or three most important strengths.]
 
 ### Main Limitations
 
-- [The most consequential weakness affecting the academic contribution.]
+- [List the two or three most consequential limitations.]
 
 ### Priority Improvements
 
 #### Priority 1
 
-- **Problem:** [A high-impact weakness.]
-- **Recommended action:** [A concrete improvement the candidate should apply.]
+- **Problem:** [Highest-impact weakness.]
+- **Action:** [Specific correction strategy.]
+
+#### Priority 2
+
+- **Problem:** [Second-highest-impact weakness.]
+- **Action:** [Specific correction strategy.]
+
+[Add Priority 3 only when necessary.]
 
 ## Score-Band Analysis
 
-**Best-fitting band reasoning:** [Explain which ETS score-band description best matches the response using the complete criterion analysis.]
+**Best-fitting band:** [Explain why the response most closely matches one ETS band.]
 
-**Reason it does not reach the next band:** [Identify the limitations preventing the immediately higher score.]
+**Why it does not reach the next band:** [Identify the limitations preventing the immediately higher score.]
 
-**Reason it is stronger than the lower band:** [When relevant, explain why the response exceeds the immediately lower band.]
+**Why it is stronger than the lower band:** [Explain why it exceeds the immediately lower score when relevant.]
 
 ## Final Evaluation
 
-- **Score:** [One integer from 0 to 5.]
+- **Score:** [One integer from 0 to 5]
 - **Performance level:** `nonresponse`, `unsuccessful`, `mostly_unsuccessful`, `partially_successful`, `generally_successful`, or `fully_successful`
 
 ## Revised Responses
 
 ### Minimal-Edit 5/5 Revision
 
-- **Target score:** 5
-
 #### Revision Strategy
 
-- [Briefly state the smallest changes needed to reach 5/5 while preserving the original response as closely as possible.]
+- [Briefly identify the smallest necessary changes.]
 
 #### Revised Response
 
-[Write the complete minimal-edit 5/5 version here. Preserve as much original wording and structure as possible, but correct every score-limiting problem.]
+[Write the complete minimal-edit Academic Discussion response.]
 
 ### Enhanced 5/5 Revision
 
-- **Target score:** 5
-
 #### Revision Strategy
 
-- [Briefly state the broader improvements made while keeping the response recognizably based on the candidate’s work.]
+- [Briefly identify the broader improvements.]
 
 #### Revised Response
 
-[Write the complete, realistic 5/5 Academic Discussion response here while preserving the candidate’s relevant position and useful original ideas.]
+[Write the complete enhanced Academic Discussion response.]
 """.strip()
 
 
